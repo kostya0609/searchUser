@@ -2,7 +2,7 @@ import { ElNotification } from "element-plus";
 
 export const notify = new class {
     success(title, message = '') {
-        this.#notify(title, message, 'success');
+        this.#notify(title, message, 'success', 2000);
     }
 
     warning(title, message = '') {

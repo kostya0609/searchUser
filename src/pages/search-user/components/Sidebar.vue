@@ -1,38 +1,31 @@
 <template>
-    <div>
+    <Preloader :loading="loading">
         <h3>Sidebar</h3>
         <el-input v-model="query" />
         <el-button
         @click="search"
         >OK
             </el-button>
-    </div>
+    </Preloader>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import {UserRepo} from "@/shared/api"
-import { notify } from '@/shared/utils';
+import { ref, computed } from 'vue';
+import { Preloader } from '@/shared/ui';
+import { useStore } from 'vuex';
 
+const store = useStore();
 
 const query = ref(null);
-const loading = ref(null);
+
+const loading = computed(() => { return store.getters.loading });
 
 const search = async () => {
-    try {
-    loading.value = true;
+      let params = {id: 5};
+      let result = store.dispatch('searchUser', params);
+      
+      if(!result) return;
 
-    let result = await UserRepo.search({id : 50});
 
-    console.log('result - ', result)
-    
-
-  } catch (e) {
-    notify.error(e.message);
-    throw e;
-  } finally {
-    loading.value = false;
-  }
-    
 };
 </script>

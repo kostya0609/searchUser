@@ -4,6 +4,7 @@
 		:element-loading-text="loadingText"
 		:element-loading-spinner="svg"
 		element-loading-svg-view-box="-10, -10, 50, 50"
+		class="page-preloade"
 	>
 		<slot />
 	</div>
