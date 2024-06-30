@@ -101,8 +101,8 @@ export class BaseRepository {
             Object
                 .entries(params)
                 .forEach(([name, value]) => {
-                    if (value) {
-                        url.searchParams.append(name, value);
+                    if (value.length > 0) {
+                        value.forEach(val => url.searchParams.append(name, val))
                     }
                 });
         }

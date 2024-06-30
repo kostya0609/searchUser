@@ -1,14 +1,23 @@
 <template>
+  <Preloader :loading="loading">
   <el-container>
 		<el-main>
-      <SearchUser/>
+      <SearchUsers/>
 		</el-main>
 	</el-container>
+  </Preloader>
 </template>
 
 <script setup>
-import  SearchUser from "@/pages/search-user"
+import { Preloader } from '@/shared/ui';
+import  SearchUsers from "@/pages/search-users"
+import {useStore} from "vuex";
+import {computed, ref} from "vue";
+
+const store = useStore();
+const loading = computed(() => store.getters.loading );
 </script>
+
 
 <style scoped lang="scss">
 
