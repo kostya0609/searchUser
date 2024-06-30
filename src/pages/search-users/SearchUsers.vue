@@ -18,7 +18,8 @@
 </template>
 <script setup>
 
-import { Sidebar, Result } from "@/pages/search-users/components";
+import { Sidebar } from "@/pages/search-users/sidebar";
+import { Result } from "@/pages/search-users/result";
 
 </script>
 

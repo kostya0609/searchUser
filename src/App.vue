@@ -9,10 +9,10 @@
 </template>
 
 <script setup>
-import { Preloader } from '@/shared/ui';
-import  SearchUsers from "@/pages/search-users"
+import {Preloader} from '@/shared/ui';
+import {SearchUsers} from "@/pages/search-users"
 import {useStore} from "vuex";
-import {computed, ref} from "vue";
+import {computed} from "vue";
 
 const store = useStore();
 const loading = computed(() => store.getters.loading );

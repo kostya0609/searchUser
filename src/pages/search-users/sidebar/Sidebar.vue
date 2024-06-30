@@ -55,7 +55,7 @@
 import {computed, ref} from 'vue';
 
 import { Pagination } from "@/shared/ui"
-import { Search, UserCardMini } from './'
+import { Search, UserCardMini } from './components'
 import { useStore } from 'vuex';
 
 const store = useStore();

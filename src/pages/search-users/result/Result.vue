@@ -18,7 +18,7 @@
 
 <script setup>
 
-import {UserCard} from './'
+import {UserCard} from './components'
 import {computed} from 'vue';
 
 import { useStore } from 'vuex';
