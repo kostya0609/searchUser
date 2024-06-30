@@ -104,7 +104,7 @@ const resetSearch = () => {
   &__container{
     margin: 20px;
   }
-  &_title{
+  &__title{
     font-size: 16px;
     font-weight: 600;
     line-height: 22.4px;

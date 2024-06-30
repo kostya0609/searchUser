@@ -1,5 +1,5 @@
 <template>
-  <div class="card card_white card__container">
+  <div class="card card_bg-white card__container">
 
     <div class="card__img">
       <el-image src="/assets/img/no_photo.png" fit="contain" />
@@ -7,11 +7,11 @@
 
     <div :class="['card__info', {'card__info_select' : userData.id === selectUserId}]">
 
-      <div class="card__user-name card__user-name_bold">
+      <div class="card__text card__text_bold">
         {{userData.username}}
       </div>
 
-      <div class="card__user-email">
+      <div class="card__text">
         {{userData.email}}
       </div>
 
@@ -40,7 +40,7 @@ const selectUserId = computed(() => store.getters.selectUserId );
 
 <style scoped lang="scss">
 .card{
-  &_white{
+  &_bg-white{
     background-color: #FFF;
   }
  &__container{
@@ -59,24 +59,19 @@ const selectUserId = computed(() => store.getters.selectUserId );
    flex: 2 1;
    align-content:center;
    padding:10px;
-
+   word-break:break-word;
    &_select{
      background-color: #0000001A;
    }
  }
- &__user-name{
-   word-break:break-word;
+ &__text{
    font-size: 14px;
    font-weight: 400;
    line-height: 17.07px;
    &_bold{
-     font-weight:bold;
+     font-weight: 600;
    }
  }
- &__user-email{
-   word-break:break-word;
- }
-
 }
 
 </style>

@@ -39,9 +39,7 @@ const showUser = computed(() => store.getters.showUser);
       background: #FFF;
     }
   }
-  &__card {
-
-  }
+  &__card {}
   &__notify{
     display: flex;
     justify-content: center;
