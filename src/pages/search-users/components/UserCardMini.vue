@@ -48,7 +48,6 @@ const selectUserId = computed(() => store.getters.selectUserId );
    border-right: 1px solid #E0E0E0;
    border-radius: 10px;
    box-shadow: 0px 0px 10px 0px #0000001A;
-   align-items: stretch;
    overflow: hidden;
  }
  &__img{

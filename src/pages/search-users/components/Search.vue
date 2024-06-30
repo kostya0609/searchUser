@@ -1,10 +1,10 @@
 <template>
   <div>
     <el-input
-        v-model="query"
-        @keyup.enter="search"
-        @change="handleChange"
-        placeholder="Введите ID или username"
+      v-model="query"
+      @keyup.enter="search"
+      @change="handleChange"
+      placeholder="Введите ID или username"
     />
   </div>
  </template>

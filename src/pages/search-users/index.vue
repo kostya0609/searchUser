@@ -54,6 +54,7 @@ import { Sidebar, Result } from "@/pages/search-users/components";
     box-shadow: 0px 0px 10px 0px #0000001A;
     border: 1px solid #E0E0E0;
     border-radius: 10px 0px 0px 0px;
+    min-height: 589px;
   }
   &__sidebar{
     align-content: start;
