@@ -16,7 +16,7 @@
 
     <Search
       class="sidebar__search"
-      @executed="getShowUsers"
+      @executed="updateShowUsers"
     />
 
     <h3 class="sidebar__title" >
@@ -69,25 +69,12 @@ const showUsers = ref([]);
 
 const resultMsg = ref('начните поиск');
 
-const getShowUsers = (currentPage = 1, pageSize = 4) => {
-  resetSearch();
-
-  if(!totalUsersFind.value) return;
-
-  paginationUpRef.value.setCurrentPage(currentPage);
-  paginationUpRef.value.setPageSize(pageSize);
-
-  paginationDownRef.value.setCurrentPage(currentPage);
-  paginationDownRef.value.setPageSize(pageSize);
-
-  showUsers.value = store.getters.showUsers( (currentPage - 1) * pageSize , (currentPage - 1) * pageSize + pageSize );
-};
-
 const updateShowUsers = (currentPage = 1, pageSize = 4) => {
   resetSearch();
-
+    
   if(!totalUsersFind.value) return;
 
+  upadatePaginationData(currentPage, pageSize);
   showUsers.value = store.getters.showUsers( (currentPage - 1) * pageSize , (currentPage - 1) * pageSize + pageSize );
 };
 
@@ -95,6 +82,14 @@ const resetSearch = () => {
   showUsers.value = [];
   store.commit('selectUserId', null);
   resultMsg.value = 'ничего не найдено'
+};
+
+const upadatePaginationData = (currentPage = 1, pageSize = 4) => {
+  paginationUpRef.value.setCurrentPage(currentPage);
+  paginationUpRef.value.setPageSize(pageSize);
+
+  paginationDownRef.value.setCurrentPage(currentPage);
+  paginationDownRef.value.setPageSize(pageSize);
 };
 
 </script>

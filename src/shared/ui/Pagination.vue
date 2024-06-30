@@ -42,6 +42,9 @@ const pageSize = ref(10);
 
 const handleCurrentChange = (val) => {
   currentPage.value = val;
+
+  console.log(currentPage.value, pageSize.value);
+
   emit('update', currentPage.value, pageSize.value);
 };
 
